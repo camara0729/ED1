@@ -6,6 +6,8 @@ public static void main(String[] args) {
             char op;
             Aluno aluno;
             String matr;
+            LSE lista1;
+            LSE lista2;
             do {
                 exibirMenu();
                 op = in.next().charAt(0); in.nextLine();
@@ -29,6 +31,13 @@ public static void main(String[] args) {
                     case '6' : System.out.println("Qual a matrícula do aluno?");
                                matr = in.nextLine();
                                listaAlunosP1.remover(matr);
+                    case '7' : System.out.println("Informe a primeira lista:")
+                               lista = in.nextLine();
+                               lista1 = new LSE(lista);
+                               System.out.println("Informe a segunda lista:")
+                               lista = in.nextLine();
+                               lista2 = new LSE(lista);
+                               break;
                     case '0' : System.out.println("Bye bye!");
                                break;
                     default: System.out.println("Opção inválida!");
@@ -45,6 +54,7 @@ public static void main(String[] args) {
         System.out.println("4 - Remover aluno do final da lista");
         System.out.println("5 - Exibir alunos da turma");
         System.out.println("6 - Remover aluno pela matrícula");
+        System.out.println("7 - Interseção de listas")
         System.out.println("0 - Sair do programa");
         System.out.print("Informe a opção desejada: ");
     }
