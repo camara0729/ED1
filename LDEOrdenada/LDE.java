@@ -39,7 +39,11 @@ public class LDE {
             this.qtd++;
         }
         else {
-            
+            Node aux = this.ultimo;
+            aux.setProx(novo);
+            novo.setAnt(aux);
+            this.ultimo = novo;
+            this.qtd--;
         }
         System.out.println("Cliente inserido");
     }
