@@ -38,11 +38,19 @@ public class LDE {
             this.qtd++;
         }
         else {
-            Node aux = this.ultimo;
-            aux.setProx(novo);
-            novo.setAnt(aux);
-            this.ultimo = novo;
-            this.qtd--;
+            Node aux = this.primeiro;
+            while (aux != null) {
+                if (c.compareTo(aux.getInfo()) < 0) {
+                    novo.setAnt(aux.getAnt());
+                    novo.setProx(aux);
+                    aux.getAnt().setProx(novo);
+                    aux.setAnt(novo);
+                    this.qtd++;
+                }
+                else {
+                    aux = aux.getProx();
+                }
+            }
         }
         System.out.println("Cliente inserido");
     }
