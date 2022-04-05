@@ -22,7 +22,7 @@ public class LDE {
             this.primeiro = novo;
             this.ultimo = novo;
             this.qtd++;
-            System.out.println("Primeira inserção.");
+            System.out.println("Primeira inserção!");
         } 
         else if (c.compareTo(this.primeiro.getInfo()) < 0){
             novo.setProx(this.primeiro);

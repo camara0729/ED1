@@ -56,7 +56,7 @@ public class Cliente implements Comparable <Cliente>{
 
     @Override
     public int compareTo(Cliente c) {
-        return this.email.compareTo(c.email);
+        return this.cpf.compareTo(c.cpf);
     }
 
 }

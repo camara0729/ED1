@@ -1,5 +1,3 @@
-package LDETeste;
-
 public class Node {
     private Node ant;
     private Cliente info;
