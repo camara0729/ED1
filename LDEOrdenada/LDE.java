@@ -14,6 +14,30 @@ public class LDE {
         }
     }
 
+    public Node buscaMelhorada (Cliente c){
+        Node aux;
+        int comparar;
+        if (this.isEmpty()){
+            return null;
+        }
+        else {
+            aux = this.primeiro;
+            while (aux != null) {
+                comparar = c.compareTo(aux.getInfo());
+                if(comparar == 0) {
+                    return aux;
+                }
+                else if(comparar > 0) {
+                    return null;
+                }
+                else {
+                   aux = aux.getProx(); 
+                }
+            }
+        }
+        return null; // maior que o último
+    }
+
     public void inserirOrdenado(Cliente c) {
 
         Node novo = new Node(c);
