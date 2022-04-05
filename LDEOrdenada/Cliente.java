@@ -1,4 +1,3 @@
-package LDETeste;
 
 public class Cliente implements Comparable <Cliente>{
 
