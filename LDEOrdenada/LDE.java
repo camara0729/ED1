@@ -79,7 +79,7 @@ public class LDE {
         System.out.println("Cliente inserido");
     }
 
-    /*public void inserirFinal(Cliente c) {
+    public void inserirFinal(Cliente c) {
        
         Node novo = new Node(c);
 
@@ -99,7 +99,7 @@ public class LDE {
         }
         System.out.println("Cliente inserido");
         this.qtd++;
-    }*/
+    }
     
     public void removerOrdenado(Cliente c) {
         Node aux, anterior, proximo;
