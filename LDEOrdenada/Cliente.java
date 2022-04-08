@@ -17,6 +17,11 @@ public class Cliente implements Comparable <Cliente>{
         this.email = e;
     }
 
+    public Cliente(String c, String n) {
+        this.cpf = c;
+        this.nome = n;
+    }
+
     @Override
     public String toString() {
         return "Cliente [cpf=" + cpf + ", email=" + email + ", fone=" + fone + ", nome=" + nome + "]";

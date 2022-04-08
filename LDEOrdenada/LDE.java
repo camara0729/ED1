@@ -48,7 +48,7 @@ public class LDE {
             this.qtd++;
             System.out.println("Primeira inserção!");
         } 
-        else if (c.compareTo(this.primeiro.getInfo()) < 0){
+        else if (c.compareTo(this.primeiro.getInfo()) <= 0){
             novo.setProx(this.primeiro);
             this.primeiro.setAnt(novo);
             this.primeiro = novo;
@@ -64,7 +64,7 @@ public class LDE {
         else {
             Node aux = this.primeiro;
             while (aux != null) {
-                if (c.compareTo(aux.getInfo()) < 0) {
+                if (c.compareTo(aux.getInfo()) <= 0) {
                     novo.setAnt(aux.getAnt());
                     novo.setProx(aux);
                     aux.getAnt().setProx(novo);

@@ -5,14 +5,16 @@ public class App {
         try (Scanner in = new Scanner (System.in)) {
             char op;
             Cliente cliente;
-            String cpf;
+            String cpf, nome, fone, email;
             do {
                 exibirMenu();
                 op = in.next().charAt(0); in.nextLine();
                 switch(op) {
                     case '1': System.out.print("Informe o CPF do cliente: ");
                               cpf = in.nextLine();
-                              cliente = new Cliente(cpf);
+                              System.out.print("Informe o nome do cliente: ");
+                              nome = in.nextLine();
+                              cliente = new Cliente(cpf, nome);
                               listaClientes.inserirOrdenado(cliente);
                               break;
                     case '2' : listaClientes.exibirLista();
