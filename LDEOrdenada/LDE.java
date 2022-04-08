@@ -79,7 +79,7 @@ public class LDE {
         System.out.println("Cliente inserido");
     }
 
-    public void inserirFinal(Cliente c) {
+    /*public void inserirFinal(Cliente c) {
        
         Node novo = new Node(c);
 
@@ -99,6 +99,50 @@ public class LDE {
         }
         System.out.println("Cliente inserido");
         this.qtd++;
+    }*/
+    
+    public void removerOrdenado(Cliente c) {
+        Node aux, anterior, proximo;
+        if (this.isEmpty()) {
+            System.out.println("Lista vazia!");
+        }
+        else if (this.qtd == 1) {
+            if (c.compareTo (this.primeiro.getInfo()) == 0) {
+                this.primeiro = null;
+                this.ultimo = null;
+                this.qtd = 0;
+                System.out.println("Remoção efetuada!");
+            }
+            else {
+                System.out.println("Valor não pertence à lista!");
+            }
+        }
+        else {
+            aux = this.buscaMelhorada(c);
+            if (aux == null) {
+                System.out.println("Valor não pertence à lista");
+            }
+            else {
+                if (aux == this.primeiro) {
+                    this.primeiro = this.primeiro.getProx();
+                    this.primeiro.setAnt(null);
+                    this.qtd--;
+                }
+                else if (aux == this.ultimo) {
+                    this.ultimo = this.ultimo.getAnt();
+                    this.ultimo.setProx(null);
+                    this.qtd--;
+                }
+                else {
+                    anterior = aux.getAnt();
+                    proximo = aux.getProx();
+                    anterior.setProx(proximo);
+                    proximo.setAnt(anterior);
+                    this.qtd--;
+                }
+                System.out.println("Remoção efetuada!");
+            }
+        }
     }
 
     public void removerInicio() {
