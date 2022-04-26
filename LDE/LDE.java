@@ -14,7 +14,7 @@ public class LDE {
         }
     }
 
-    public void inserirInicio(Cliente c) {
+    public void inserirInicio(Tarefa c) {
 
         Node novo = new Node(c);
         Node aux;

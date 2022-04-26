@@ -1,11 +1,11 @@
 import java.util.Scanner;
 
-public class Interface {
+public class ControleDeTarefas {
     public static void main(String[] args) {
         LDE listaClientes = new LDE();
         Scanner in = new Scanner (System.in);
         char op;
-        Cliente cliente;
+        Tarefa tarefa;
         String cpf;
         do {
             exibirMenu();
@@ -13,8 +13,8 @@ public class Interface {
             switch(op) {
                 case '1': System.out.print("Informe o CPF do cliente: ");
                           cpf = in.nextLine();
-                          cliente = new Cliente(cpf);
-                          listaClientes.inserirOrdenado(cliente);
+                          tarefa = new Tarefa(cpf);
+                          listaClientes.inserirOrdenado(tarefa);
                           break;
                 case '2' : listaClientes.exibirLista();
                            break;

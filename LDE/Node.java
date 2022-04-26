@@ -2,9 +2,9 @@ public class Node {
     
     private Node ant;
     private Node prox;
-    private Cliente info;
+    private Tarefa info;
 
-    public Node (Cliente c){
+    public Node (Tarefa c){
         this.info = c;
     }
 
@@ -16,7 +16,7 @@ public class Node {
         this.ant = novoProx;
     }
     
-    public void setInfo (Cliente valor){
+    public void setInfo (Tarefa valor){
         this.info = valor;
     }
 
@@ -28,7 +28,7 @@ public class Node {
         return this.prox;
     }
 
-    public Cliente getInfo(){
+    public Tarefa getInfo(){
         return this.info;
     }
 

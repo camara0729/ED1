@@ -4,7 +4,7 @@ public static void main(String[] args) {
         LDE listaClientes = new LDE();
         try (Scanner in = new Scanner (System.in)) {
             char op;
-            Cliente cliente;
+            Tarefa cliente;
             String nome;
             String cpf;
             String fone;
@@ -18,7 +18,7 @@ public static void main(String[] args) {
                               nome = in.nextLine();
                               System.out.print("Insira o número telefônico do cliente: ");
                               fone = in.nextLine();
-                              cliente = new Cliente(cpf, nome, fone);
+                              cliente = new Tarefa(cpf, nome, fone);
                               listaClientes.inserirInicio(cliente);
                               break;
                     case '2': listaClientes.exibirLista();

@@ -1,11 +1,11 @@
 public class Node {
     
     private Node ant;
-    private Cliente info;
     private Node prox;
+    private Tarefa info;
     
-    public Node(Cliente c) {
-        this.info = c;
+    public Node(Tarefa t) {
+        this.info = t;
     }
     public void setAnt(Node novoAnt) {
         this.ant = novoAnt;
@@ -13,7 +13,7 @@ public class Node {
     public void setProx(Node novoProx) {
         this.prox = novoProx;
     }
-    public void setInfo(Cliente valor) {
+    public void setInfo(Tarefa valor) {
         this.info = valor;
     }
     public Node getAnt () {
@@ -22,7 +22,7 @@ public class Node {
     public Node getProx () {
         return this.prox;
     }
-    public Cliente getInfo () {
+    public Tarefa getInfo () {
         return this.info;
     }
 }

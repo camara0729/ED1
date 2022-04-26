@@ -1,7 +1,8 @@
 public class LDE { 
+    
     private Node primeiro;
-    private int qtd;
     private Node ultimo;
+    private int qtd;
     
     public boolean isEmpty () {
         if (this.primeiro == null && this.qtd == 0 && this.ultimo == null) {
@@ -12,7 +13,7 @@ public class LDE {
         }
     }
     
-    public Node buscaMelhorada (Cliente c) {
+    public Node buscaMelhorada (Tarefa t) {
         Node aux;
         int retorno;
         if (this.isEmpty() == true) {
@@ -21,7 +22,7 @@ public class LDE {
         else {
             aux = this.primeiro;
             while (aux != null) {
-                retorno = aux.getInfo().compareTo(c);
+                retorno = aux.getInfo().compareTo(t);
                 if (retorno == 0) {
                     return aux;
                 }
@@ -36,8 +37,8 @@ public class LDE {
         }
     }
     
-    public void inserirOrdenado (Cliente c) {
-        Node novo = new Node (c);
+    public void inserirOrdenado (Tarefa t) {
+        Node novo = new Node (t);
         Node aux, anterior;
         int retorno;
         if (this.isEmpty() == true) { 
@@ -45,13 +46,13 @@ public class LDE {
             this.ultimo = novo;
             this.qtd++;
         }
-        else if (c.compareTo(this.primeiro.getInfo()) < 0) { 
+        else if (t.compareTo(this.primeiro.getInfo()) < 0) { 
             novo.setProx(this.primeiro);
             this.primeiro.setAnt(novo);
             this.primeiro = novo;
             this.qtd++;
         }
-        else if (c.compareTo(this.ultimo.getInfo()) > 0) { 
+        else if (t.compareTo(this.ultimo.getInfo()) > 0) { 
             this.ultimo.setProx(novo);
             novo.setAnt(this.ultimo);
             this.ultimo = novo;
@@ -60,7 +61,7 @@ public class LDE {
         else { 
             aux = this.primeiro;
             while (aux != null) {
-                retorno = aux.getInfo().compareTo(c);
+                retorno = aux.getInfo().compareTo(t);
                 if (retorno == 0) {
                     System.out.println("Valor repetido. Inserção não efetuada!");
                     return;
@@ -82,13 +83,13 @@ public class LDE {
         }
     }
 
-    public void removerOrdenado (Cliente c) {
+    public void removerOrdenado (Tarefa t) {
         Node retorno, anterior, proximo;
         if (this.isEmpty() == true) { 
             System.out.println("Lista vazia!");
         }
         else if (this.qtd == 1) {  
-            if (c.compareTo (this.primeiro.getInfo()) == 0) {
+            if (t.compareTo (this.primeiro.getInfo()) == 0) {
                 this.primeiro = null;
                 this.ultimo = null;
                 this.qtd = 0;
@@ -99,7 +100,7 @@ public class LDE {
             }            
         }
         else { 
-            retorno = this.buscaMelhorada (c);
+            retorno = this.buscaMelhorada (t);
             if (retorno == null) {
                 System.out.println("Valor não pertence a lista");
             }
