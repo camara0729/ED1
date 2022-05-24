@@ -1,7 +1,7 @@
 # ED1
 
-    LSE - lista simplesmente encadeadas
+    LSE - lista simplesmente encadeada
     
-    LDE - lista duplamente encadeadas
+    LDE - lista duplamente encadeada
 
-    LCE - lista circular encadeada
+    LSCE - lista sisplesmente circular encadeada

@@ -1,3 +1,5 @@
+
+
 public class Node {
     
     private Node ant;

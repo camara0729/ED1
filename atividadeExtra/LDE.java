@@ -1,3 +1,5 @@
+import LSCE.Node;
+
 public class LDE { 
     
     private Node primeiro;
